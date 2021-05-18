@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <title>Registration!</title>
+</head>
+
+<body>
+
+    <div class="page">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+
+                    <div id="scene"></div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <script id="tpl-registration" type="text/x-handlebars-template">
+        <h1>Registration</h1>
+
+        <hr>
+
+        <form id="form" class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" required>
+                <div class="invalid-feedback">
+                    Please, enter a valid email address.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" required>
+                <div class="invalid-feedback">
+                    Please, enter a valid phone number.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" required>
+                <div class="invalid-feedback">
+                    Please, enter a valid password.
+                </div>
+            </div>
+            <div id="server-feedback" class="alert alert-danger d-none" role="alert"></div>
+            <div class="d-grid">
+                <button id="submit" type="submit" class="btn btn-primary">Register</button>
+            </div>
+        </form>
+    </script>
+
+    <script id="tpl-verification" type="text/x-handlebars-template">
+        <h1>Verification</h1>
+
+        <hr>
+
+        <form id="form" class="needs-validation" novalidate>
+            <p class="lead fw-lighter">
+                A six digit verification code has been sent to your phone number <span id="phone-placeholder" class="fw-bold">{{{phone}}}</span>.
+            </p>
+            <input type="hidden" id="phone" value="{{{phone}}}">
+            <div class="mb-3">
+                <label for="verification_code" class="form-label">Verification Code</label>
+                <input type="number" class="form-control" id="verification_code" min="100000" max="999999" required>
+                <div class="invalid-feedback">
+                    Please, enter a valid verification code.
+                </div>
+            </div>
+            <div id="server-feedback" class="alert alert-danger d-none" role="alert"></div>
+            <div class="d-grid">
+                <button id="submit" type="submit" class="btn btn-primary">Verify</button>
+            </div>
+        </form>
+    </script>
+
+    <script id="tpl-thank-you" type="text/x-handlebars-template">
+        <h1>Thank You!</h1>
+
+        <hr>
+
+        <div class="alert alert-success" role="alert">Your account has been verified!</div>
+    </script>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
+    <script src="node_modules/intl-tel-input/build/js/intlTelInput.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

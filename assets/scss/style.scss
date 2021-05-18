@@ -1,0 +1,30 @@
+// out: ../css/style.css, compress: true, sourceMap: true, autoprefixer: last 5 versions, groupmedia: true
+
+
+@import '../../node_modules/intl-tel-input/build/css/intlTelInput.css';
+
+.iti__flag {background-image: url("../../node_modules/intl-tel-input/build/img/flags.png");}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .iti__flag {background-image: url("../../node_modules/intl-tel-input/build/img/flags@2x.png");}
+}
+
+.iti {
+  width: 100%;
+}
+
+.mb-3.is-invalid .invalid-feedback {
+    display: block;
+}
+
+.page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
